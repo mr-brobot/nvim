@@ -1,4 +1,4 @@
 return {
-	dir = "~/p.nvim",
+	"mr-brobot/p.nvim",
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 }
