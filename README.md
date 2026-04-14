@@ -22,5 +22,5 @@ The following must be installed and on `PATH` before launching Neovim.
 
 ### CLIs
 
-- [`claude`](https://github.com/anthropics/claude-code) — required by [`claude-code.nvim`](https://github.com/greggh/claude-code.nvim)
+- [`claude`](https://github.com/anthropics/claude-code) — required by [`claudecode.nvim`](https://github.com/coder/claudecode.nvim)
 
