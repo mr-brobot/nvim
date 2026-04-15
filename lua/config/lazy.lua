@@ -35,10 +35,6 @@ end)
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
--- split direction
-vim.o.splitright = true
-vim.o.splitbelow = true
-
 -- clear search highlights when pressing esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
