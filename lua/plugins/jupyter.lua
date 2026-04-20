@@ -31,7 +31,8 @@ return {
 	{
 		"3rd/image.nvim",
 		opts = function()
-			-- Windows Terminal speaks sixel; Ghostty/Kitty/WezTerm speak the Kitty protocol.
+			-- Windows Terminal -> sixel;
+			-- Ghostty/Kitty -> kitty
 			return { backend = vim.env.WT_SESSION and "sixel" or "kitty" }
 		end,
 	},

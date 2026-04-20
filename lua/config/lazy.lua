@@ -56,7 +56,8 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "{", "{zz")
 vim.keymap.set("n", "}", "}zz")
 
-require("lazy").setup({
+local lazy = require("lazy")
+lazy.setup({
 	spec = {
 		{ import = "plugins" },
 	},
