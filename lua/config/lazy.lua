@@ -5,6 +5,9 @@ vim.g.loaded_netrwPlugin = 1
 -- dedicated python host for remote plugins (venv managed by uv)
 vim.g.python3_host_prog = vim.fn.stdpath("config") .. "/.venv/bin/python3"
 
+-- expose venv bin on PATH so plugins that shell out (e.g. jupytext.nvim) find the tools
+vim.env.PATH = vim.fn.stdpath("config") .. "/.venv/bin:" .. vim.env.PATH
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"

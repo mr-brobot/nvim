@@ -1,7 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "master",
 	lazy = false,
 	build = ":TSUpdate",
+	main = "nvim-treesitter.configs",
 	opts = {
 		ensure_installed = {
 			"bash",
@@ -12,10 +14,15 @@ return {
 			"luadoc",
 			"markdown",
 			"markdown_inline",
+			"python",
 			"query",
+			"rust",
 			"vim",
 			"vimdoc",
+			"yaml",
 		},
 		auto_install = true,
+		highlight = { enable = true },
+		indent = { enable = true },
 	},
 }
