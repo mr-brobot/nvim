@@ -13,6 +13,7 @@ The following must be installed and on `PATH` before launching Neovim.
 - `make` and a C compiler (`gcc` or `clang`) — builds [`telescope-fzf-native`](https://github.com/nvim-telescope/telescope-fzf-native.nvim), compiles Treesitter grammars, and builds Lua 5.1 via [`hererocks`](https://github.com/luarocks/hererocks) bootstrap
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep) — required by Telescope `live_grep`
 - [`fd`](https://github.com/sharkdp/fd) — used by Telescope `find_files`
+- [`tree-sitter` CLI](https://tree-sitter.github.io/tree-sitter/cli/index.html) — required by `nvim-treesitter` 1.x to generate and install parsers
 - [`imagemagick`](https://imagemagick.org/) — runtime FFI target for [`image.nvim`](https://github.com/3rd/image.nvim) (molten output rendering)
 - [`quarto`](https://quarto.org/) — CLI backing [`quarto-nvim`](https://github.com/quarto-dev/quarto-nvim) (`:QuartoPreview`, render)
 - A [Nerd Font](https://www.nerdfonts.com/) — for `blink.cmp` and `nvim-web-devicons` glyphs
