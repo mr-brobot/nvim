@@ -36,10 +36,22 @@ vim.opt.number = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- sync clipboard between os and nvim
-vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
-end)
+-- sync clipboard nvim -> os via OSC 52 (copy-only)
+local noop = function()
+	return {}
+end
+vim.g.clipboard = {
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+	},
+	paste = {
+		["+"] = noop,
+		["*"] = noop,
+	},
+}
+vim.o.clipboard = "unnamedplus"
 
 -- indentation
 vim.opt.tabstop = 2
