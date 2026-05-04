@@ -20,6 +20,8 @@ return {
 			lua = { "stylua" },
 			python = { "ruff_format" },
 			rust = { "rustfmt" },
+			json = { "prettier" },
+			jsonc = { "prettier" },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",
