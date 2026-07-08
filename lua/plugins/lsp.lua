@@ -47,13 +47,13 @@ return {
 						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 
-					local builtin = require("telescope.builtin")
-					map("grd", builtin.lsp_definitions, "Goto Definition")
-					map("grr", builtin.lsp_references, "Goto References")
-					map("gri", builtin.lsp_implementations, "Goto Implementation")
-					map("grt", builtin.lsp_type_definitions, "Goto Type Definition")
-					map("gO", builtin.lsp_document_symbols, "Document Symbols")
-					map("gW", builtin.lsp_dynamic_workspace_symbols, "Workspace Symbols")
+					local picker = Snacks.picker
+					map("grd", picker.lsp_definitions, "Goto Definition")
+					map("grr", picker.lsp_references, "Goto References")
+					map("gri", picker.lsp_implementations, "Goto Implementation")
+					map("grt", picker.lsp_type_definitions, "Goto Type Definition")
+					map("gO", picker.lsp_symbols, "Document Symbols")
+					map("gW", picker.lsp_workspace_symbols, "Workspace Symbols")
 					map("grD", vim.lsp.buf.declaration, "Goto Declaration")
 					map("grn", vim.lsp.buf.rename, "Rename")
 					map("gra", vim.lsp.buf.code_action, "Code Action", { "n", "x" })
