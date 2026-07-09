@@ -5,7 +5,6 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" }, -- filetype glyphs for picker + explorer
 	opts = {
 		bigfile = { enabled = true }, -- disable heavy features in huge files
-		indent = { enabled = true }, -- indent guides + scope highlight
 		scope = { enabled = true }, -- scope text objects / motions
 		scroll = { enabled = true }, -- smooth scrolling
 		statuscolumn = { enabled = true }, -- fold/sign/number column
