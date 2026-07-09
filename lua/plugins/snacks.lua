@@ -19,6 +19,7 @@ return {
 				-- with preview off collapses to a centered input+list box.
 				explorer = {
 					layout = { preset = "vertical", preview = false, layout = { width = 0.6, height = 0.8 } },
+					jump = { close = true }, -- close the float when opening a file (dirs still just toggle)
 				},
 			},
 		},
