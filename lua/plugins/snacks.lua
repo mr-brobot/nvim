@@ -6,7 +6,6 @@ return {
 	opts = {
 		bigfile = { enabled = true }, -- disable heavy features in huge files
 		scope = { enabled = true }, -- scope text objects / motions
-		scroll = { enabled = true }, -- smooth scrolling
 		statuscolumn = { enabled = true }, -- fold/sign/number column
 		words = { enabled = true }, -- highlight LSP references under cursor
 		input = { enabled = true }, -- replaces vim.ui.input
