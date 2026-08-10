@@ -1,3 +1,6 @@
+-- preserve explorer working dir
+local explorer_cwd
+
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -18,6 +21,9 @@ return {
 				explorer = {
 					layout = { preset = "vertical", preview = false, layout = { width = 0.6, height = 0.8 } },
 					jump = { close = true }, -- close the float when opening a file (dirs still just toggle)
+					on_close = function(picker)
+						explorer_cwd = picker:cwd()
+					end,
 				},
 			},
 		},
@@ -41,7 +47,7 @@ return {
 		{
 			"<leader>e",
 			function()
-				Snacks.explorer()
+				Snacks.explorer({ cwd = explorer_cwd or vim.fn.expand("%:p:h") })
 			end,
 			desc = "File explorer",
 		},
