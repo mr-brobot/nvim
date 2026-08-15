@@ -1,10 +1,9 @@
-# nvim
+# Neovim
 
-Plugins are managed by [lazy.nvim](https://github.com/folke/lazy.nvim), LSPs and formatters by [mason.nvim](https://github.com/mason-org/mason.nvim).
+Plugins are managed by [lazy.nvim](https://github.com/folke/lazy.nvim),
+LSPs and formatters by [mason.nvim](https://github.com/mason-org/mason.nvim).
 
 ## Prerequisites
-
-The following must be installed and on `PATH` before launching Neovim.
 
 ### System
 
@@ -17,6 +16,9 @@ The following must be installed and on `PATH` before launching Neovim.
 - [`imagemagick`](https://imagemagick.org/) — runtime FFI target for [`image.nvim`](https://github.com/3rd/image.nvim) (molten output rendering)
 - [`quarto`](https://quarto.org/) — CLI backing [`quarto-nvim`](https://github.com/quarto-dev/quarto-nvim) (`:QuartoPreview`, render)
 - A [Nerd Font](https://www.nerdfonts.com/) — for `blink.cmp` and `nvim-web-devicons` glyphs
+- [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/) — runs the `llama.cpp` FIM server (`docker-compose.yml`)
+- [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) — required for CUDA GPU access inside the `server-cuda` container
+- NVIDIA GPU drivers (`nvidia-smi` working) — used by the `llama-fim` service
 
 ### Language toolchains
 
