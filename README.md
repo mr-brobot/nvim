@@ -1,4 +1,4 @@
-# Neovim
+# Neovim Config
 
 Plugins are managed by [lazy.nvim](https://github.com/folke/lazy.nvim),
 LSPs and formatters by [mason.nvim](https://github.com/mason-org/mason.nvim).
