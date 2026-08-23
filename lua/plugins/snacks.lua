@@ -17,14 +17,14 @@ return {
 			sources = {
 				explorer = {
 					layout = { preset = "vertical", preview = false, layout = { width = 0.6, height = 0.8 } },
-					jump = { close = true }, -- close the float when opening a file (dirs still just toggle)
+					jump = { close = true }, -- close the float when opening a file
 					on_close = function(picker)
 						explorer_cwd = picker:cwd()
 					end,
 				},
 			},
 		},
-		explorer = { enabled = true }, -- file explorer (replaces nvim-tree)
+		explorer = { enabled = true },
 		terminal = {
 			enabled = true,
 			win = { style = "float", border = "rounded", width = 0.8, height = 0.8 },
@@ -53,13 +53,19 @@ return {
 			desc = "File explorer",
 		},
 		{
-			"<leader>gd",
+			"<leader>gds",
+			function()
+				Snacks.picker.git_diff({ staged = true })
+			end,
+			desc = "Git diff (staged)",
+		},
+		{
+			"<leader>gdh",
 			function()
 				Snacks.picker.git_diff()
 			end,
-			desc = "Git diff",
+			desc = "Git diff (hunks)",
 		},
-		-- Finders (replaces telescope; LSP navigation is wired in lsp.lua).
 		{
 			"<leader>ff",
 			function()
