@@ -22,5 +22,6 @@
   "p.nvim": { "branch": "main", "commit": "4922f11c259a517db86f2cf8ffffe76c4f69f81b" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "quarto-nvim": { "branch": "main", "commit": "17f1e5d664bc615478230dc0240666329efacf9b" },
-  "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" }
+  "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },
+  "worktrees.nvim": { "branch": "main", "commit": "bd3bb6db01aee69775b8d237dcb50d66d96d2d68" }
 }

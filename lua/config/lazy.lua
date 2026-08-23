@@ -43,6 +43,9 @@ vim.opt.shiftwidth = 2
 -- clear search highlights when pressing esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- exit terminal mode
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 -- center cursor after vertical motions
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

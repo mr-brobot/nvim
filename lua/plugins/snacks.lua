@@ -9,15 +9,12 @@ return {
 	opts = {
 		bigfile = { enabled = true }, -- disable heavy features in huge files
 		scope = { enabled = true }, -- scope text objects / motions
-		statuscolumn = { enabled = true }, -- fold/sign/number column
-		words = { enabled = true }, -- highlight LSP references under cursor
-		input = { enabled = true }, -- replaces vim.ui.input
-		notifier = { enabled = true }, -- replaces vim.notify
+		statuscolumn = { enabled = true },
+		words = { enabled = true },
+		input = { enabled = true },
+		notifier = { enabled = true },
 		picker = {
-			-- fuzzy finder; also takes over vim.ui.select (ui_select default)
 			sources = {
-				-- centered floating explorer (replaces nvim-tree); the vertical preset
-				-- with preview off collapses to a centered input+list box.
 				explorer = {
 					layout = { preset = "vertical", preview = false, layout = { width = 0.6, height = 0.8 } },
 					jump = { close = true }, -- close the float when opening a file (dirs still just toggle)
@@ -28,6 +25,10 @@ return {
 			},
 		},
 		explorer = { enabled = true }, -- file explorer (replaces nvim-tree)
+		terminal = {
+			enabled = true,
+			win = { style = "float", border = "rounded", width = 0.8, height = 0.8 },
+		},
 	},
 	keys = {
 		{
@@ -65,6 +66,13 @@ return {
 				Snacks.picker.files()
 			end,
 			desc = "Find files",
+		},
+		{
+			"<leader>tt",
+			function()
+				Snacks.terminal.toggle()
+			end,
+			desc = "Toggle terminal",
 		},
 		{
 			"<leader>fg",
