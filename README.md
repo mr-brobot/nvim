@@ -7,30 +7,24 @@ LSPs and formatters by [mason.nvim](https://github.com/mason-org/mason.nvim).
 
 ### System
 
-- [Neovim](https://neovim.io/) 0.12+ — required by `nvim-treesitter` 1.x and the LSP APIs used across the config
-- [`git`](https://git-scm.com/) and [`curl`](https://curl.se/) — lazy.nvim bootstrap
-- `make` and a C compiler (`gcc` or `clang`) — compiles Treesitter grammars and builds Lua 5.1 via [`hererocks`](https://github.com/luarocks/hererocks) bootstrap
-- [`ripgrep`](https://github.com/BurntSushi/ripgrep) — backs the [`snacks.nvim`](https://github.com/folke/snacks.nvim) picker's `grep`
-- [`fd`](https://github.com/sharkdp/fd) — backs the `snacks.nvim` picker's `files`
-- [`tree-sitter` CLI](https://tree-sitter.github.io/tree-sitter/cli/index.html) — required by `nvim-treesitter` 1.x to generate and install parsers
-- [`imagemagick`](https://imagemagick.org/) — runtime FFI target for [`image.nvim`](https://github.com/3rd/image.nvim) (molten output rendering)
-- [`quarto`](https://quarto.org/) — CLI backing [`quarto-nvim`](https://github.com/quarto-dev/quarto-nvim) (`:QuartoPreview`, render)
-- A [Nerd Font](https://www.nerdfonts.com/) — for `blink.cmp` and `nvim-web-devicons` glyphs
-- [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/) — runs the `llama.cpp` FIM server (`docker-compose.yml`)
-- [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) — required for CUDA GPU access inside the `server-cuda` container
-- NVIDIA GPU drivers (`nvidia-smi` working) — used by the `llama-fim` service
-
+- [Neovim](https://neovim.io/) 0.12+
+- [`uv`](https://docs.astral.sh/uv/)
+- [`ripgrep`](https://github.com/BurntSushi/ripgrep)
+- [`fd`](https://github.com/sharkdp/fd)
+- [`tree-sitter` CLI](https://tree-sitter.github.io/tree-sitter/cli/index.html)
+- [`imagemagick`](https://imagemagick.org/)
+- [`quarto`](https://quarto.org/) (optional)
+- A [Nerd Font](https://www.nerdfonts.com/) (optional)
+- [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/) (optional)
+- [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) (optional
 ### Language toolchains
 
-- [Rust](https://rustup.rs/) — provides `rust_analyzer`, `rustfmt`, and powers `blink.cmp`'s fuzzy matcher
-- [Python](https://www.python.org/) — runtime for `pyrefly` and `ruff`
-- [`elan`](https://github.com/leanprover/elan) — manages Lean 4 toolchains for [`lean.nvim`](https://github.com/Julian/lean.nvim)
+- [Rust](https://rustup.rs/)
+- [Python](https://www.python.org/)
+- [`elan`](https://github.com/leanprover/elan)
 
-### Neovim Python host
+### Python Host
 
-[`molten-nvim`](https://github.com/benlubas/molten-nvim) is a remote plugin and needs its own Python interpreter. Host-side dependencies are declared in `pyproject.toml` and pinned in `uv.lock`. On a fresh machine, sync the venv with [`uv`](https://docs.astral.sh/uv/):
-
-```bash
-cd ~/.config/nvim && uv sync
-```
+[`molten-nvim`](https://github.com/benlubas/molten-nvim) is a remote plugin and needs its own Python interpreter.
+Host-side dependencies are declared in `pyproject.toml`.
 
