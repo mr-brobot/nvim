@@ -29,15 +29,15 @@
   },
   "lean.nvim": {
     "branch": "main",
-    "commit": "950eff1ae00db2b2f35996cb916c1a47254c3c96"
+    "commit": "c15b1cea82ccb6c0bc1ee16ec12632fc04219087"
   },
   "llama.vim": {
     "branch": "master",
-    "commit": "789c40a23f099134a58f5bbb623582f0bcf49bd4"
+    "commit": "e1ca1cc6af9da73f4ae21f810f33909d515592e6"
   },
   "mason-lspconfig.nvim": {
     "branch": "main",
-    "commit": "49b16d699f9ca83184330c6eb886737a27f23bdd"
+    "commit": "b3298993d55fa194279b5eb9dbfb3a43da65cadf"
   },
   "mason-tool-installer.nvim": {
     "branch": "main",
@@ -53,19 +53,19 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "ffd261c09c3dabd0bf1a438f47a8ae3b22f3c3ff"
+    "commit": "3e8d598d3b5f8338a41699c436e5fa11d2666cf0"
   },
   "nvim-treesitter": {
     "branch": "main",
-    "commit": "f603a2f4da48728f80257fb5fbb90145fd1dc173"
+    "commit": "e6be2ff65d89df5039cad7a422600757bbf81d02"
   },
   "nvim-web-devicons": {
     "branch": "master",
-    "commit": "914decffe650296c87312c53b7933ecb86718499"
+    "commit": "58447c1fca354bbf184425e4a8d01deecbd6f3c4"
   },
   "otter.nvim": {
     "branch": "main",
-    "commit": "1e43f95639c4317acec587d9329d1b29a0fd786d"
+    "commit": "0b38ccef44a805e8b378f5f6ce38aad0642c9366"
   },
   "p.nvim": {
     "branch": "main",
