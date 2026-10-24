@@ -8,13 +8,11 @@ return {
 			},
 		},
 	},
-
 	{
 		"saghen/blink.cmp",
 		version = "1.*",
 		opts = {
-			keymap = { preset = "default" },
-			appearance = { nerd_font_variant = "mono" },
+			keymap = { preset = "super-tab" },
 			fuzzy = { implementation = "prefer_rust" },
 			signature = { enabled = true },
 			sources = {
@@ -28,7 +26,6 @@ return {
 			},
 		},
 	},
-
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -48,18 +45,29 @@ return {
 					end
 
 					local picker = Snacks.picker
-					map("grd", picker.lsp_definitions, "Goto Definition")
-					map("grr", picker.lsp_references, "Goto References")
+					map("gtd", picker.lsp_definitions, "Goto Definition")
+					map("gtr", picker.lsp_references, "Goto References")
 					map("gri", picker.lsp_implementations, "Goto Implementation")
-					map("grt", picker.lsp_type_definitions, "Goto Type Definition")
-					map("gO", picker.lsp_symbols, "Document Symbols")
-					map("gW", picker.lsp_workspace_symbols, "Workspace Symbols")
+					map("grt", picker.lsp_type_definitions, "Goto Type")
 					map("grD", vim.lsp.buf.declaration, "Goto Declaration")
-					map("grn", vim.lsp.buf.rename, "Rename")
-					map("gra", vim.lsp.buf.code_action, "Code Action", { "n", "x" })
+					map("gsd", picker.lsp_symbols, "Document Symbols")
+					map("gsw", picker.lsp_workspace_symbols, "Workspace Symbols")
+					map("gsr", vim.lsp.buf.rename, "Rename Symbol")
+					map("gca", vim.lsp.buf.code_action, "Code Action", { "n", "x" })
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 
+					-- toggle diagnostics
+					vim.keymap.set("n", "<leader>td", function()
+						local vl = vim.diagnostic.config().virtual_lines
+						if not vl then
+							vim.diagnostic.config({ virtual_lines = { current_line = true } })
+						else
+							vim.diagnostic.config({ virtual_lines = false })
+						end
+					end, { desc = "Toggle diagnostics" })
+
+					-- toggle hints
 					if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))

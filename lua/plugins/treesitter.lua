@@ -4,7 +4,9 @@ return {
 	lazy = false,
 	build = ":TSUpdate",
 	config = function()
-		require("nvim-treesitter").install({
+		local ts = require("nvim-treesitter")
+
+		ts.install({
 			"bash",
 			"c",
 			"diff",
