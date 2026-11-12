@@ -13,6 +13,7 @@ return {
 			"html",
 			"lua",
 			"luadoc",
+			"json",
 			"markdown",
 			"markdown_inline",
 			"python",
@@ -31,6 +32,7 @@ return {
 				"diff",
 				"html",
 				"lua",
+				"json",
 				"markdown",
 				"python",
 				"query",
@@ -42,6 +44,10 @@ return {
 			callback = function()
 				vim.treesitter.start()
 				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+				-- enable ts-based folding
+				vim.wo.foldmethod = "expr"
+				vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 			end,
 		})
 	end,

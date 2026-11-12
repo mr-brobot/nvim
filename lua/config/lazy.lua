@@ -23,16 +23,17 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "  "
 
 -- enable relative line numbers
-vim.opt.relativenumber = true
-vim.opt.number = true
+vim.o.relativenumber = true
+vim.o.number = true
 
 -- case-insensitive search (unless \C or one or more capital letters in the search term)
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- indentation
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+-- indentation/folding
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.foldlevelstart = 8
 
 -- clear search highlights when pressing esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
