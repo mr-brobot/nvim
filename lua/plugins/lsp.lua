@@ -58,14 +58,15 @@ return {
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 
 					-- toggle diagnostics
-					vim.keymap.set("n", "<leader>td", function()
+					local toggle_diagnostics = function()
 						local vl = vim.diagnostic.config().virtual_lines
 						if not vl then
 							vim.diagnostic.config({ virtual_lines = { current_line = true } })
 						else
 							vim.diagnostic.config({ virtual_lines = false })
 						end
-					end, { desc = "Toggle diagnostics" })
+					end
+					vim.keymap.set("n", "<leader>td", toggle_diagnostics, { desc = "Toggle diagnostics" })
 
 					-- toggle hints
 					if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
@@ -97,40 +98,40 @@ return {
 				end,
 			})
 
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
+			local blink = require("blink.cmp")
 
-			local servers = {
-				lua_ls = {
-					settings = {
-						Lua = {
-							completion = { callSnippet = "Replace" },
-						},
+			vim.lsp.config("*", { capabilities = blink.get_lsp_capabilities() })
+			vim.lsp.config("lua_ls", {
+				settings = {
+					Lua = {
+						completion = { callSnippet = "Replace" },
 					},
 				},
-				rust_analyzer = {},
-				pyrefly = {},
-				ruff = {
-					on_attach = function(client)
-						client.server_capabilities.hoverProvider = false
-					end,
-				},
-			}
+			})
+			vim.lsp.config("ruff", {
+				on_attach = function(client)
+					client.server_capabilities.hoverProvider = false
+				end,
+			})
+			vim.lsp.config("vale_ls", {
+				filetypes = { "markdown", "text", "quarto" },
+				workspace_required = true,
+			})
 
-			local ensure_installed = vim.tbl_keys(servers or {})
-			vim.list_extend(ensure_installed, { "stylua", "prettier" })
-			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
-			require("mason-lspconfig").setup({
-				ensure_installed = {},
-				automatic_installation = false,
-				handlers = {
-					function(server_name)
-						local server = servers[server_name] or {}
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
-					end,
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"lua_ls",
+					"rust_analyzer",
+					"pyrefly",
+					"ruff",
+					"vale_ls",
+					"stylua",
+					"vale",
+					"biome",
 				},
 			})
+
+			require("mason-lspconfig").setup({})
 		end,
 	},
 }
