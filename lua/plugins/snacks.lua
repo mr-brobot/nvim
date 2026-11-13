@@ -74,7 +74,7 @@ return {
 			desc = "Find files",
 		},
 		{
-			"<leader>tt",
+			"<localleader>t",
 			function()
 				Snacks.terminal.toggle()
 			end,
